@@ -1,12 +1,9 @@
 <?php
-
 $host = "127.0.0.1";
 $user = "root";
 $password = "";
 $dbname = "instagram";
-
 $con = new mysqli($host,$user,$password,$dbname);
-
 ?>
 
 
@@ -20,12 +17,12 @@ $con = new mysqli($host,$user,$password,$dbname);
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Instagram<h1>
+  <h1>Profil<h1>
 
   <section id="instagram-feed">
 <?php
 
-$sql = "SELECT * FROM `posts`";
+$sql = "SELECT * FROM `posts` WHERE username ='bent_larsen' ";
 $result = $con->query($sql);
 
 while ($row = $result->fetch_assoc()){
@@ -40,6 +37,7 @@ echo "
 }
 
 $con->close();
+
 ?>
 
 
